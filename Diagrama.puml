@@ -1,0 +1,75 @@
+@startuml
+abstract class Funcionario {
+    - String nome
+    - int idFuncionario
+}
+
+class Aluno implements treinar {
+    - int idAluno
+
+}
+
+class Professor extends Funcionario implements ajudarAluno {
+    - int idProfessor
+
+}
+
+class Recepcionista extends Funcionario {
+    +cadastrarAluno()
+    +listarAluno()
+}
+
+abstract class Aulas {
+    - String modalidade
+    - String diasSemana
+    - int qtdAlunos
+}
+
+class Funcional extends Aulas implements Aula
+
+class Boxe extends Aulas implements Aula
+
+abstract class Equipamentos {
+    - String nome
+    - String marca
+    - int quantidade
+}
+
+class Esteira extends Equipamentos implements usarEquipamento {
+    - int velMaxima
+    - int velInicial
+    - boolean ligada
+    + void ligar()
+    + void desligar()
+
+}
+
+class Supino extends Equipamentos implements usarEquipamento {
+    - int pesoMaximo
+    - int pesoInicial
+    + void adicionarPeso(int peso)
+    + void zerarPeso()
+}
+
+interface treinar {
+    +void treinar()
+}
+
+interface ajudarAluno {
+    + void ajudarAluno()
+}
+
+interface Aula {
+    + void comecarAula()
+    + void terminarAula()
+
+}
+
+interface usarEquipamento {
+    + void usarEquipamento()
+}
+
+
+
+
+@enduml
